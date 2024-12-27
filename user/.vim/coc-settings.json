@@ -1,0 +1,5 @@
+{
+    "coc.preferences.semanticTokensHighlights": true,
+    "semanticTokens.filetypes": ["*"],
+    "clangd.arguments": ["--limit-references=0"]
+}

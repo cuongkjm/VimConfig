@@ -52,7 +52,7 @@ nnoremap <C-Left> :tabprevious<CR>
 vnoremap <C-c> "+y
 
 " show/hide code block by za (see :help foldmethod)
-set foldmethod=indent
+set foldmethod=syntax
 
 " -----------------------------------------
 "  gruvbox start

@@ -1,5 +1,13 @@
 {
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/19.1.2/clangd_19.1.2/bin/clangd",
     "coc.preferences.semanticTokensHighlights": true,
-    "semanticTokens.filetypes": ["*"],
-    "clangd.arguments": ["--limit-references=0"]
+    "semanticTokens.filetypes": [
+        "*"
+    ],
+    "clangd.arguments": [
+        "--limit-references=0",
+        "--limit-results=0",
+        "--j=16"
+    ],
+    "coc.preferences.formatOnSave": true
 }

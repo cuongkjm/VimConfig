@@ -53,6 +53,7 @@ vnoremap <C-c> "+y
 
 " show/hide code block by za (see :help foldmethod)
 set foldmethod=syntax
+set foldlevel=99
 
 " highlight search results
 set hlsearch

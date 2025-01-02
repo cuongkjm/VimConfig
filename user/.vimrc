@@ -54,6 +54,9 @@ vnoremap <C-c> "+y
 " show/hide code block by za (see :help foldmethod)
 set foldmethod=syntax
 
+" highlight search results
+set hlsearch
+
 " -----------------------------------------
 "  gruvbox start
 " -----------------------------------------

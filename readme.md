@@ -44,3 +44,13 @@ https://nodejs.org/en/download/
 ```
 cp -r clangd_18.1.3 ~/.config/coc/extensions/coc-clangd-data/install/18.1.3/
 ```
+
+## install ripgrep (enable Rg command in vim)
+```
+sudo apt install -y ripgrep
+```
+
+## install The Silver Searcher (enable Ag command in vim)
+```
+sudo apt install -y silversearcher-ag
+```

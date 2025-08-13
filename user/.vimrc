@@ -73,6 +73,9 @@ let g:gruvbox_contrast_dark = 'medium'
 " NERDTree start
 " -----------------------------------------
 
+" Show hidden files
+let NERDTreeShowHidden=1
+
 " Show/Hide
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
@@ -129,7 +132,8 @@ nnoremap <C-p> :Files<Cr>
 " -------------------------------------
 
 " Use F12 to go to definition
-nmap <silent> <F12> <Plug>(coc-definition)
+" Ctrl + O to go back
+nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 " Use Ctrl + F to go to references
 nnoremap <silent> <C-F> <Plug>(coc-references)

@@ -38,11 +38,9 @@ https://nodejs.org/en/download/
 
 - create empty file `main.cpp` and open it in vim
 
-- download lastest clangd at: https://github.com/clangd/clangd/releases/latest
-
-- unzip and copy to folder, example: 
+- run in vim
 ```
-cp -r clangd_18.1.3 ~/.config/coc/extensions/coc-clangd-data/install/18.1.3/
+:CocCommand clangd.install
 ```
 
 ## install ripgrep (enable Rg command in vim)

@@ -128,9 +128,8 @@ nnoremap <C-p> :Files<Cr>
 " coc.nvim start
 " -------------------------------------
 
-" Use F12 to go to definition
 " Ctrl + O to go back, Ctrl + I to go forward
-" Use F12 to open definition in a new tab
+" Use F12 to open definition in a new tab (move to the existing tab if it is already open)
 nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 " Use K to show documentation of symbol under cursor (like hover in vscode)

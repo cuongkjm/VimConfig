@@ -139,6 +139,9 @@ nnoremap <C-p> :Files<Cr>
 " Use F12 to go to definition
 nmap <silent> <F12> <Plug>(coc-definition)
 
+" Use K to show documentation of symbol under cursor (like hover in vscode)
+nmap <silent> K :call CocAction('doHover')<CR>
+
 " Use Ctrl + F to go to references
 nnoremap <silent> <C-F> <Plug>(coc-references)
 

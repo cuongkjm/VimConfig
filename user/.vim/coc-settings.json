@@ -9,5 +9,6 @@
         "--limit-results=0",
         "--j=16"
     ],
-    "coc.preferences.formatOnSave": true
+    "coc.preferences.formatOnSave": true,
+    "inlayHint.enable": false
 }

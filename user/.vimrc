@@ -76,11 +76,8 @@ let g:gruvbox_contrast_dark = 'medium'
 " Show hidden files
 let NERDTreeShowHidden=1
 
-" Show/Hide
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
-
-" F5 to sync opened file with nerdtree
-nnoremap <F5> :NERDTreeFind<CR>
+" F5 to sync opened file with nerdtree without focusing.
+nnoremap <F5> :NERDTreeFind<CR>:wincmd p<CR>
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
@@ -90,8 +87,8 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p |
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd'.argv()[0] | endif
 
-" Open the existing NERDTree on each new tab.
-autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
+" Open the existing NERDTree on each new tab without focusing.
+autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | silent NERDTreeFind | wincmd p | endif
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
@@ -134,10 +131,7 @@ nnoremap <C-p> :Files<Cr>
 " Use F12 to go to definition
 " Ctrl + O to go back, Ctrl + I to go forward
 " Use F12 to open definition in a new tab
-" nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>
-
-" Use F12 to go to definition
-nmap <silent> <F12> <Plug>(coc-definition)
+nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 " Use K to show documentation of symbol under cursor (like hover in vscode)
 nmap <silent> K :call CocAction('doHover')<CR>

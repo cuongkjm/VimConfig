@@ -132,8 +132,12 @@ nnoremap <C-p> :Files<Cr>
 " -------------------------------------
 
 " Use F12 to go to definition
-" Ctrl + O to go back
-nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>
+" Ctrl + O to go back, Ctrl + I to go forward
+" Use F12 to open definition in a new tab
+" nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>
+
+" Use F12 to go to definition
+nmap <silent> <F12> <Plug>(coc-definition)
 
 " Use Ctrl + F to go to references
 nnoremap <silent> <C-F> <Plug>(coc-references)

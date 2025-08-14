@@ -130,7 +130,7 @@ nnoremap <C-p> :Files<Cr>
 
 " Ctrl + O to go back, Ctrl + I to go forward
 " Use F12 to open definition in a new tab (move to the existing tab if it is already open)
-nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>
+nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>zz
 
 " Use K to show documentation of symbol under cursor (like hover in vscode)
 nmap <silent> K :call CocAction('doHover')<CR>
@@ -144,6 +144,9 @@ nnoremap <silent> <F4> :CocCommand clangd.switchSourceHeader<CR>
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Highlight the symbol and its references when holding the cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " -------------------------------------
 "  coc.nvim end

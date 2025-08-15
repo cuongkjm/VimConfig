@@ -5,7 +5,7 @@ sudo apt install -y build-essential ncurses-dev python3-dev gettext libacl1-dev 
 ./configure \
             --with-features=huge \
             --enable-multibyte \
-            --enable-python3interp=yes \
+            --enable-python3interp=dynamic --with-python3-stable-abi=3.6 \
             --enable-terminal \
             --enable-cscope \
             --without-x \

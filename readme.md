@@ -43,6 +43,15 @@ https://nodejs.org/en/download/
 :CocCommand clangd.install
 ```
 
+Ref: https://github.com/neoclide/coc.nvim.git
+
+## install vimspector
+```
+VimspectorInstall CodeLLDB
+```
+
+Ref: https://github.com/puremourning/vimspector.git
+
 ## install ripgrep (enable Rg command in vim)
 ```
 sudo apt install -y ripgrep

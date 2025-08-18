@@ -10,5 +10,6 @@
         "--j=16"
     ],
     "coc.preferences.formatOnSave": true,
+    "coc.preferences.jumpCommand": "tab drop",
     "inlayHint.enable": false
 }

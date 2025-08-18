@@ -17,7 +17,13 @@ Plug 'github/copilot.vim'
 
 " Language server protocol for C++
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" C++ graphical debugging
+Plug 'puremourning/vimspector'
 call plug#end()
+
+" Enable mouse support
+set mouse=a
 
 " Show line number
 set number
@@ -76,8 +82,8 @@ let g:gruvbox_contrast_dark = 'medium'
 " Show hidden files
 let NERDTreeShowHidden=1
 
-" F5 to sync opened file with nerdtree without focusing.
-nnoremap <F5> :NERDTreeFind<CR>:wincmd p<CR>
+" F4 to sync opened file with nerdtree without focusing.
+nnoremap <F4> :NERDTreeFind<CR>:wincmd p<CR>
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
@@ -138,9 +144,6 @@ nmap <silent> K :call CocAction('doHover')<CR>
 " Use Ctrl + F to go to references
 nnoremap <silent> <C-F> <Plug>(coc-references)
 
-" Use F4 to switch between source and header files
-nnoremap <silent> <F4> :CocCommand clangd.switchSourceHeader<CR>
-
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -150,4 +153,30 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " -------------------------------------
 "  coc.nvim end
+" -------------------------------------
+
+" -------------------------------------
+" Vimspector start
+" -------------------------------------
+
+" F5 to restart and then call NERDTreeClose
+nnoremap <F5> :call vimspector#Restart()<CR>
+
+" Shift + F5 to stop debugging
+nnoremap <S-F5> :call vimspector#Stop()<CR>
+
+" F9 to toggle break point
+nnoremap <F9> :call vimspector#ToggleBreakpoint()<CR>
+
+" F10 to step over
+nnoremap <F10> :call vimspector#StepOver()<CR>
+
+" F11 to step into
+nnoremap <F11> :call vimspector#StepInto()<CR>
+
+" Shift + F11 to step out
+nnoremap <S-F11> :call vimspector#StepOut()<CR>
+
+" -------------------------------------
+" Vimspector end
 " -------------------------------------

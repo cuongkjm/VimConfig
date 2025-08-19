@@ -22,6 +22,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'puremourning/vimspector'
 call plug#end()
 
+" Set the terminal type to xterm-256color for better color and key support.
+" This was added to resolve issues with function keys (like F3) not being
+" correctly interpreted by Vim in the Foot terminal.
+set term=xterm-256color
+
 " Enable mouse support
 set mouse=a
 

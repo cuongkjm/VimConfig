@@ -151,6 +151,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 " Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" use Alt + o to switch header and source file
+nnoremap <silent> <A-o> :CocCommand clangd.switchSourceHeader<CR>
+
 " -------------------------------------
 "  coc.nvim end
 " -------------------------------------

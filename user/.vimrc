@@ -161,8 +161,8 @@ nnoremap <silent> <A-o> :CocCommand clangd.switchSourceHeader<CR>
 " Vimspector start
 " -------------------------------------
 
-" F5 to restart and then call NERDTreeClose
-nnoremap <F5> :call vimspector#Restart()<CR>
+" F5 to continue debugging
+nnoremap <F5> :call vimspector#Continue()<CR>
 
 " Shift + F5 to stop debugging
 nnoremap <S-F5> :call vimspector#Stop()<CR>

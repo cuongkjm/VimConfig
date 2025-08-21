@@ -61,3 +61,27 @@ sudo apt install -y ripgrep
 ```
 sudo apt install -y silversearcher-ag
 ```
+
+# Known issues
+## vim does not recognize the terminal info
+### Issue
+```
+E558: Terminal entry not found in terminfo
+'foot' not known. Available builtin terminals are:
+    builtin_ansi
+    builtin_vt320
+    builtin_vt52
+    builtin_xterm
+    builtin_iris-ansi
+    builtin_pcansi
+    builtin_win32
+    builtin_amiga
+    builtin_dumb
+    builtin_debug
+defaulting to 'ansi'
+```
+### Solution
+- Add the following line to user's `~/.bashrc` or `~/.zshrc`
+```
+export TERM=xterm-256color
+```

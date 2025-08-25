@@ -59,6 +59,9 @@ nnoremap <C-Right> :tabnext<CR>
 " Map Ctrl + Left to move to the previous tab
 nnoremap <C-Left> :tabprevious<CR>
 
+" Map ct to close the current tab
+nnoremap ct :tabclose<CR>
+
 " copy selected text in visual mode to the system clipboard
 vnoremap <C-c> "+y
 

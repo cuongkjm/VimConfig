@@ -22,11 +22,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'puremourning/vimspector'
 call plug#end()
 
-" Set the terminal type to xterm-256color for better color and key support.
-" This was added to resolve issues with function keys (like F3) not being
-" correctly interpreted by Vim in the Foot terminal.
-set term=xterm-256color
-
 " Enable mouse support
 set mouse=a
 
@@ -45,6 +40,11 @@ set shiftwidth=4
 " Use spaces instead of tabs
 set expandtab
 
+" Set the terminal type to xterm-256color for better color and key support.
+" This was added to resolve issues with function keys (like F3) not being
+" correctly interpreted by Vim in the Foot terminal.
+set term=xterm-256color
+
 set switchbuf=useopen,usetab,newtab
 
 " increases the width of the current window
@@ -58,6 +58,44 @@ nnoremap <C-Right> :tabnext<CR>
 
 " Map Ctrl + Left to move to the previous tab
 nnoremap <C-Left> :tabprevious<CR>
+
+" Alt + n to move to the n tab (1-9)
+nnoremap <A-1> 1gt
+nnoremap <A-2> 2gt
+nnoremap <A-3> 3gt
+nnoremap <A-4> 4gt
+nnoremap <A-5> 5gt
+nnoremap <A-6> 6gt
+nnoremap <A-7> 7gt
+nnoremap <A-8> 8gt
+nnoremap <A-9> 9gt
+tnoremap <A-1> <C-\><C-N>1gt
+tnoremap <A-2> <C-\><C-N>2gt
+tnoremap <A-3> <C-\><C-N>3gt
+tnoremap <A-4> <C-\><C-N>4gt
+tnoremap <A-5> <C-\><C-N>5gt
+tnoremap <A-6> <C-\><C-N>6gt
+tnoremap <A-7> <C-\><C-N>7gt
+tnoremap <A-8> <C-\><C-N>8gt
+tnoremap <A-9> <C-\><C-N>9gt
+inoremap <A-1> <C-o>1gt
+inoremap <A-2> <C-o>2gt
+inoremap <A-3> <C-o>3gt
+inoremap <A-4> <C-o>4gt
+inoremap <A-5> <C-o>5gt
+inoremap <A-6> <C-o>6gt
+inoremap <A-7> <C-o>7gt
+inoremap <A-8> <C-o>8gt
+inoremap <A-9> <C-o>9gt
+vnoremap <A-1> <C-c>1gt
+vnoremap <A-2> <C-c>2gt
+vnoremap <A-3> <C-c>3gt
+vnoremap <A-4> <C-c>4gt
+vnoremap <A-5> <C-c>5gt
+vnoremap <A-6> <C-c>6gt
+vnoremap <A-7> <C-c>7gt
+vnoremap <A-8> <C-c>8gt
+vnoremap <A-9> <C-c>9gt
 
 " Map ct to close the current tab
 nnoremap ct :tabclose<CR>
@@ -139,6 +177,7 @@ nnoremap <C-p> :Files<Cr>
 " Ctrl + O to go back, Ctrl + I to go forward
 " Use F12 to open definition in a new tab (move to the existing tab if it is already open)
 nmap <silent> <F12> :call CocAction('jumpDefinition', 'tab drop')<CR>zz
+nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>zz
 
 " Use K to show documentation of symbol under cursor (like hover in vscode)
 nmap <silent> K :call CocAction('doHover')<CR>
@@ -185,3 +224,4 @@ nnoremap <S-F11> :call vimspector#StepOut()<CR>
 " -------------------------------------
 " Vimspector end
 " -------------------------------------
+
